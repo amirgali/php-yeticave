@@ -121,6 +121,7 @@ $user_avatar = 'img/user.jpg';
                 ],
             ]
         ?>
+
         <ul class="lots__list">
             <li class="lots__item lot">
                 <div class="lot__image">
