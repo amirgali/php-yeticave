@@ -29,7 +29,23 @@ $user_avatar = 'img/user.jpg';
         <nav class="user-menu">
 
         <!-- здесь должен быть PHP код для показа аватара пользователя -->
-
+            <?php if ($is_auth): ?>
+            <div class="user-menu__image">
+                <img src="img/user.jpg" width="40" alt="Пользователь">
+            </div>
+            <div class="user-menu__logged">
+                <p>Константин</p>
+            </div>
+            <?php else: ?>
+            <ul class="user-menu__list">
+                <li class="user-menu__item">
+                    <a href="#">Регистрация</a>
+                </li>
+                <li class="user-menu__item">
+                    <a href="#">Вход</a>
+                </li>
+            </ul>
+            <?php endif; ?>
         </nav>
     </div>
 </header>
@@ -38,6 +54,8 @@ $user_avatar = 'img/user.jpg';
     <section class="promo">
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
+        <?php $categories = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное']; ?>
+
         <ul class="promo__list">
             <li class="promo__item promo__item--boards">
                 <a class="promo__link" href="all-lots.html">Доски и лыжи</a>
@@ -63,6 +81,46 @@ $user_avatar = 'img/user.jpg';
         <div class="lots__header">
             <h2>Открытые лоты</h2>
         </div>
+        <?php
+            $lot = [
+                0 => [
+                  'name'  => '2014 Rossignol District Snowboard',
+                  'categor' => '$categories[0]',
+                  'price' => '10999',
+                  'image' => 'img/lot-1.jpg'
+                ],
+                1 => [
+                    'name'  => 'DC Ply Mens 2016/2017 Snowboard',
+                    'categor' => '$categories[0]',
+                    'price' => '159999',
+                    'image' => 'img/lot-2.jpg'
+                ],
+                2 => [
+                    'name'  => 'Крепления Union Contact Pro 2015 года размер L/XL',
+                    'categor' => '$categories[1]',
+                    'price' => '8000',
+                    'image' => 'img/lot-3.jpg'
+                ],
+                3 => [
+                    'name'  => 'Ботинки для сноуборда DC Mutiny Charocal',
+                    'categor' => '$categories[2]',
+                    'price' => '10999',
+                    'image' => 'img/lot-4.jpg'
+                ],
+                4 => [
+                    'name'  => 'Куртка для сноуборда DC Mutiny Charocal',
+                    'categor' => '$categories[3]',
+                    'price' => '7500',
+                    'image' => 'img/lot-5.jpg'
+                ],
+                5 => [
+                    'name'  => 'Маска Oakley Canopy',
+                    'categor' => '$categories[5]',
+                    'price' => '5400',
+                    'image' => 'img/lot-6.jpg'
+                ],
+            ]
+        ?>
         <ul class="lots__list">
             <li class="lots__item lot">
                 <div class="lot__image">
